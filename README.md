@@ -2,7 +2,7 @@
 
 > The official landing page and 3D architectural dashboard for **Moduly** — the intelligent codebase analysis tool.
 
-![Moduly Concept Animation](https://via.placeholder.com/800x400/0f111a/CCFF00?text=Moduly+-+Codebase+Architecture+Visualizer)
+![Moduly Concept Animation](./public/webpage.png)
 
 Moduly transforms messy directory structures into intuitive, navigable 3D graph networks. It parses your project files locally, tracking dependencies, architecture scaling, and calculating modularity scores instantly.
 
