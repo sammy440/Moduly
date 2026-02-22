@@ -26,7 +26,7 @@ export function HeroSection() {
             </h1>
 
             <p className="text-lg md:text-xl text-white/50 mb-12 max-w-2xl mx-auto leading-relaxed">
-                High-end architecture analysis with interactive 3D graphs for messy codebases.
+                High-end architecture analysis with interactive 3D graphs for messy codebase.
                 The ultimate graph for engineering teams.
             </p>
 
@@ -37,7 +37,7 @@ export function HeroSection() {
                         whileTap={{ scale: 0.95 }}
                         className="bg-primary text-white px-10 py-5 rounded-2xl font-bold flex items-center gap-3 neon-glow-blue"
                     >
-                        Enter Dashboard
+                        View code reports
                         <ArrowRight size={20} />
                     </motion.button>
                 </Link>

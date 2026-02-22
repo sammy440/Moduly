@@ -146,7 +146,7 @@ const features = [
     {
         icon: Shield,
         title: "Health Scoring",
-        description: "Unified score based on modularity, test coverage and churn.",
+        description: "Unified score based on modularity, test coverage & churn.",
         className: "md:col-span-2 md:row-span-1",
         Background: HealthBackground
     }

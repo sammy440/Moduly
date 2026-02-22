@@ -59,7 +59,7 @@ export function AnimatedAnalyzerGraphics() {
     }, []);
 
     return (
-        <div className="relative w-full aspect-square max-w-[500px] mx-auto overflow-hidden rounded-3xl border border-white/10 bg-[#0f111a] shadow-2xl flex flex-col">
+        <div className="relative w-full aspect-[4/5] sm:aspect-square max-w-[500px] mx-auto overflow-hidden rounded-3xl border border-white/10 bg-[#0f111a] shadow-2xl flex flex-col">
             <div className="absolute inset-0 bg-primary/5 blur-[80px]" />
 
             {/* Header / Top Bar */}
@@ -157,29 +157,29 @@ export function AnimatedAnalyzerGraphics() {
                             animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
                             exit={{ opacity: 0, scale: 0.9 }}
                             transition={{ duration: 0.8, type: "spring" }}
-                            className="absolute inset-0 p-8 flex flex-col justify-center gap-6 bg-[#0f111a]/80 backdrop-blur-sm"
+                            className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-center gap-4 sm:gap-6 bg-[#0f111a]/80 backdrop-blur-sm"
                         >
-                            <div className="flex items-center gap-4 border-b border-white/10 pb-6">
-                                <div className="w-14 h-14 rounded-2xl bg-primary/20 border border-primary/50 flex items-center justify-center">
-                                    <CheckCircle2 size={32} className="text-primary" />
+                            <div className="flex items-center gap-3 sm:gap-4 border-b border-white/10 pb-4 sm:pb-6">
+                                <div className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-2xl bg-primary/20 border border-primary/50 flex items-center justify-center">
+                                    <CheckCircle2 size={24} className="text-primary sm:w-8 sm:h-8" />
                                 </div>
-                                <div>
-                                    <h3 className="text-2xl font-bold text-white mb-1">Project Mapped</h3>
-                                    <div className="text-sm font-mono text-white/50">Analysis completed in 1.2s</div>
+                                <div className="min-w-0">
+                                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-0.5 sm:mb-1 truncate">Project Mapped</h3>
+                                    <div className="text-xs sm:text-sm font-mono text-white/50 truncate">Analysis completed in 1.2s</div>
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-2 gap-3 sm:gap-4">
                                 {ANALYZED_STATS.map((stat, i) => (
                                     <motion.div
                                         key={stat.label}
                                         initial={{ opacity: 0, y: 10 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: 0.3 + (i * 0.1) }}
-                                        className="glass p-2 rounded-xl border border-white/5 bg-white/5"
+                                        className="glass p-3 rounded-xl border border-white/5 bg-white/5"
                                     >
-                                        <div className="text-xs font-mono text-white/40 mb-1 uppercase tracking-wider">{stat.label}</div>
-                                        <div className={`text-lg font-bold ${stat.color}`}>{stat.value}</div>
+                                        <div className="text-[10px] sm:text-xs font-mono text-white/40 mb-1 uppercase tracking-wider truncate">{stat.label}</div>
+                                        <div className={`text-base sm:text-lg font-bold ${stat.color} truncate`}>{stat.value}</div>
                                     </motion.div>
                                 ))}
                             </div>
