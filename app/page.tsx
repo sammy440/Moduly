@@ -6,6 +6,7 @@ import { FeaturesSection } from "@/components/FeaturesSection";
 import { AboutSection } from "@/components/AboutSection";
 import { InstallationSection } from "@/components/InstallationSection";
 import { ImplementationSection } from "@/components/ImplementationSection";
+import { Footer } from "@/components/Footer";
 
 const HeroGraph = dynamic(() => import("@/components/HeroGraph").then(mod => mod.HeroGraph), { ssr: false });
 
@@ -32,6 +33,7 @@ export default function LandingPage() {
       <div className="w-full relative py-20 border-t border-white/5">
         <ImplementationSection />
       </div>
+      <Footer />
     </div>
   );
 }

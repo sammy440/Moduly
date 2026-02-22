@@ -176,10 +176,10 @@ export function AnimatedAnalyzerGraphics() {
                                         initial={{ opacity: 0, y: 10 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: 0.3 + (i * 0.1) }}
-                                        className="glass p-4 rounded-xl border border-white/5 bg-white/5"
+                                        className="glass p-2 rounded-xl border border-white/5 bg-white/5"
                                     >
                                         <div className="text-xs font-mono text-white/40 mb-1 uppercase tracking-wider">{stat.label}</div>
-                                        <div className={`text-xl font-bold ${stat.color}`}>{stat.value}</div>
+                                        <div className={`text-lg font-bold ${stat.color}`}>{stat.value}</div>
                                     </motion.div>
                                 ))}
                             </div>
