@@ -2,8 +2,9 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, Target, FileCode, GitBranch, Cpu } from 'lucide-react';
+import { Zap, Target, FileCode, Cpu } from 'lucide-react';
 import { useReport } from '../context/ReportContext';
+import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, LineChart, Line } from 'recharts';
 
 export function MetricsPanel() {
     const { report } = useReport();
@@ -39,11 +40,48 @@ export function MetricsPanel() {
                         <span className="text-sm font-medium text-white/40 uppercase tracking-widest">{stat.label}</span>
                     </div>
 
-                    <div className="flex items-baseline gap-1">
-                        <span className="text-4xl font-bold tracking-tighter" style={{ color: stat.color }}>
-                            {stat.value}
-                        </span>
-                        <span className="text-sm font-medium text-white/20">{stat.suffix}</span>
+                    <div className="flex items-end justify-between h-[60px]">
+                        <div className="flex items-baseline gap-1">
+                            <span className="text-4xl font-bold tracking-tighter" style={{ color: stat.color }}>
+                                {stat.value}
+                            </span>
+                            <span className="text-sm font-medium text-white/20">{stat.suffix}</span>
+                        </div>
+
+                        {/* Mini Recharts Inline */}
+                        <div className="w-[100px] h-full opacity-60">
+                            {stat.label === 'Health Score' && (
+                                <ResponsiveContainer width="100%" height="100%">
+                                    <PieChart>
+                                        <Pie data={[{ value: report.score }, { value: 100 - report.score }]} innerRadius={20} outerRadius={25} dataKey="value" startAngle={90} endAngle={-270}>
+                                            <Cell fill={stat.color} />
+                                            <Cell fill="rgba(255,255,255,0.05)" />
+                                        </Pie>
+                                    </PieChart>
+                                </ResponsiveContainer>
+                            )}
+                            {stat.label === 'Lines of Code' && (
+                                <ResponsiveContainer width="100%" height="100%">
+                                    <BarChart data={[{ v: 2 }, { v: 4 }, { v: 3 }, { v: 7 }, { v: 5 }, { v: 8 }]}>
+                                        <Bar dataKey="v" fill={stat.color} radius={[2, 2, 0, 0]} barSize={8} />
+                                    </BarChart>
+                                </ResponsiveContainer>
+                            )}
+                            {stat.label === 'AI Insights' && (
+                                <ResponsiveContainer width="100%" height="100%">
+                                    <LineChart data={[{ v: 1 }, { v: 3 }, { v: 2 }, { v: 5 }, { v: 4 }, { v: 6 }]}>
+                                        <Line type="monotone" dataKey="v" stroke={stat.color} strokeWidth={2} dot={false} />
+                                    </LineChart>
+                                </ResponsiveContainer>
+                            )}
+                            {stat.label === 'Hotspots' && (
+                                <ResponsiveContainer width="100%" height="100%">
+                                    <BarChart data={[{ v: report.hotspots?.length || 0 }, { v: 2 }, { v: 5 }]}>
+                                        <Bar dataKey="v" fill={stat.color} radius={[2, 2, 0, 0]} barSize={8} />
+                                    </BarChart>
+                                </ResponsiveContainer>
+                            )}
+                        </div>
                     </div>
                 </motion.div>
             ))}

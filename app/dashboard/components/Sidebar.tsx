@@ -18,8 +18,11 @@ const navItems = [
     { icon: ShieldAlert, label: 'Security', id: 'sec' },
 ];
 
+import { useReport, TabType } from '../context/ReportContext';
+
 export function Sidebar() {
     const [isCollapsed, setIsCollapsed] = useState(false);
+    const { activeTab, setActiveTab } = useReport();
 
     return (
         <motion.aside
@@ -49,14 +52,15 @@ export function Sidebar() {
                 {navItems.map((item) => (
                     <button
                         key={item.id}
+                        onClick={() => setActiveTab(item.id as TabType)}
                         className={cn(
                             "w-full flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-all group",
-                            item.id === 'arch' && "text-primary bg-primary/5"
+                            activeTab === item.id && "text-primary bg-primary/5"
                         )}
                     >
                         <item.icon size={22} className={cn(
                             "transition-transform group-hover:scale-110",
-                            item.id === 'arch' && "text-primary"
+                            activeTab === item.id && "text-primary"
                         )} />
                         {!isCollapsed && (
                             <motion.span

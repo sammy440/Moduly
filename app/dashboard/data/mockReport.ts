@@ -42,5 +42,21 @@ export const mockReport = {
             { source: "src/analyzer/git.ts", target: "src/types.ts" },
             { source: "src/dashboard/generator.ts", target: "src/types.ts" }
         ]
+    },
+    packageDependencies: {
+        used: ["react", "react-dom", "framer-motion", "lucide-react", "recharts"],
+        unused: ["lodash"],
+        outdated: [
+            { name: "framer-motion", current: "10.0.0", latest: "11.0.0" }
+        ],
+        suggestions: ["tailwind-merge", "clsx"]
+    },
+    security: [
+        { name: "Regular Expression Denial of Service (ReDoS)", severity: "low", description: "Found in minimatch < 3.0.5" },
+        { name: "Cross-Site Scripting (XSS)", severity: "medium", description: "Ensure user inputs are sanitized in UI components" }
+    ],
+    performance: {
+        bundleSize: "1.2MB",
+        loadTime: "1.4s"
     }
 };

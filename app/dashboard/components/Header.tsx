@@ -1,9 +1,12 @@
 "use client";
 
 import React from 'react';
-import { Search, Bell, User } from 'lucide-react';
+import { Search, Bell, Trash2 } from 'lucide-react';
+import { useReport } from '../context/ReportContext';
 
 export function Header() {
+    const { report, clearReport } = useReport();
+
     return (
         <header className="h-20 flex items-center justify-between px-10 border-b border-white/5 animate-fade-in">
             <div className="flex items-center gap-6">
@@ -15,13 +18,23 @@ export function Header() {
                         className="bg-white/5 border border-white/10 rounded-full py-2 pl-10 pr-6 outline-none focus:border-primary/50 focus:bg-white/10 transition-all w-64 text-sm"
                     />
                 </div>
-                <div className="flex items-center gap-2 text-xs font-medium text-white/40">
-                    <span>PROJECT:</span>
-                    <span className="text-white/80 tracking-wide uppercase">MODULY-CLI</span>
-                </div>
+                {report && (
+                    <div className="flex items-center gap-2 text-xs font-medium text-white/40">
+                        <span>PROJECT:</span>
+                        <span className="text-white/80 tracking-wide uppercase">{report.projectName}</span>
+                    </div>
+                )}
             </div>
 
             <div className="flex items-center gap-6">
+                {report && (
+                    <button
+                        onClick={clearReport}
+                        className="text-xs font-medium px-4 py-2 rounded-full border border-red-500/30 text-red-400 hover:bg-red-500/10 transition flex items-center gap-2"
+                    >
+                        <Trash2 size={14} /> Clear Report
+                    </button>
+                )}
                 <button className="relative p-2 rounded-full hover:bg-white/5 transition-all text-white/60 hover:text-white">
                     <Bell size={20} />
                     <span className="absolute top-2 right-2 w-2 h-2 bg-hotspot rounded-full border-2 border-[#0B0F19]"></span>

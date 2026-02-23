@@ -12,7 +12,7 @@ export function LandingHeader() {
                 <span className="text-2xl font-bold tracking-wider text-white font-serif">Moduly</span>
             </div>
             <Link
-                href="https://github.com"
+                href="https://github.com/sammy440/Moduly"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2.5 rounded-full bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/10 hover:border-white/20 hover:scale-105 transition-all duration-300"
