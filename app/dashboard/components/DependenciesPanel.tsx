@@ -76,7 +76,7 @@ export function DependenciesPanel() {
                         variants={itemVariants}
                         whileHover={{ scale: 1.02, y: -2 }}
                         className="relative overflow-hidden rounded-2xl border border-white/[0.06] p-6 group cursor-default"
-                        style={{ background: 'rgba(15,23,42,0.5)', backdropFilter: 'blur(16px)' }}
+                        style={{ background: 'var(--dash-surface)', backdropFilter: 'blur(16px)' }}
                     >
                         <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: card.gradient }} />
                         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{
@@ -101,7 +101,7 @@ export function DependenciesPanel() {
                 <motion.div
                     variants={scaleIn}
                     className="col-span-2 rounded-2xl border border-white/[0.06] p-6 flex flex-col"
-                    style={{ background: 'rgba(15,23,42,0.5)', backdropFilter: 'blur(16px)' }}
+                    style={{ background: 'var(--dash-surface)', backdropFilter: 'blur(16px)' }}
                 >
                     <div className="flex items-center gap-3 mb-4">
                         <div className="w-8 h-8 rounded-lg bg-[#5B9CFF]/10 flex items-center justify-center border border-[#5B9CFF]/20">
@@ -122,7 +122,7 @@ export function DependenciesPanel() {
                                     ))}
                                 </Pie>
                                 <RechartsTooltip
-                                    contentStyle={{ backgroundColor: 'rgba(10,15,30,0.95)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '10px', fontSize: '11px' }}
+                                    contentStyle={{ backgroundColor: 'var(--dash-surface)', border: '1px solid var(--dash-border)', borderRadius: '10px', fontSize: '11px', color: 'var(--dash-text)' }}
                                 />
                             </PieChart>
                         </ResponsiveContainer>
@@ -154,7 +154,7 @@ export function DependenciesPanel() {
                 <motion.div
                     variants={scaleIn}
                     className="col-span-3 rounded-2xl border border-white/[0.06] p-6 flex flex-col"
-                    style={{ background: 'rgba(15,23,42,0.5)', backdropFilter: 'blur(16px)' }}
+                    style={{ background: 'var(--dash-surface)', backdropFilter: 'blur(16px)' }}
                 >
                     <div className="flex items-center gap-3 mb-5">
                         <div className="w-8 h-8 rounded-lg bg-[#9F7AEA]/10 flex items-center justify-center border border-[#9F7AEA]/20">
@@ -214,7 +214,7 @@ export function DependenciesPanel() {
                 <motion.div
                     variants={itemVariants}
                     className="rounded-2xl border border-white/[0.06] p-6 flex flex-col"
-                    style={{ background: 'rgba(15,23,42,0.5)', backdropFilter: 'blur(16px)' }}
+                    style={{ background: 'var(--dash-surface)', backdropFilter: 'blur(16px)' }}
                 >
                     <div className="flex items-center gap-3 mb-5">
                         <div className="w-8 h-8 rounded-lg bg-yellow-400/10 flex items-center justify-center border border-yellow-400/20">
@@ -265,7 +265,7 @@ export function DependenciesPanel() {
                 <motion.div
                     variants={itemVariants}
                     className="rounded-2xl border border-white/[0.06] p-6 flex flex-col"
-                    style={{ background: 'rgba(15,23,42,0.5)', backdropFilter: 'blur(16px)' }}
+                    style={{ background: 'var(--dash-surface)', backdropFilter: 'blur(16px)' }}
                 >
                     <div className="flex items-center gap-3 mb-5">
                         <div className="w-8 h-8 rounded-lg bg-[#CCFF00]/10 flex items-center justify-center border border-[#CCFF00]/20">

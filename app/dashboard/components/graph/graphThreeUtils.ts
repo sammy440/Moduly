@@ -145,20 +145,22 @@ export function buildNodeObject({ node, isSelected, isActive, isDimmed }: NodeOb
 export function buildNodeTooltip(node: any): string {
     return `
         <div style="
-            background: rgba(6,9,18,0.92);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 8px 14px;
-            border-radius: 10px;
+            background: var(--dash-surface);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--dash-border);
+            padding: 10px 16px;
+            border-radius: 12px;
             font-family: system-ui, -apple-system, sans-serif;
             font-size: 11px;
-            color: #fff;
+            color: var(--dash-text);
             pointer-events: none;
             max-width: 260px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
         ">
             <div style="font-weight:700; margin-bottom: 4px; color: ${node.color};">${node.name}</div>
-            <div style="color: rgba(255,255,255,0.35); font-size: 9px; font-family: monospace;">${node.id}</div>
-            ${node.loc ? `<div style="margin-top: 6px; color: rgba(255,255,255,0.5); font-size: 9px;">${node.loc} LOC</div>` : ''}
+            <div style="color: var(--dash-text-muted); font-size: 9px; font-family: monospace;">${node.id}</div>
+            ${node.loc ? `<div style="margin-top: 6px; color: var(--dash-text-secondary); font-size: 9px;">${node.loc} LOC</div>` : ''}
         </div>
     `;
 }

@@ -58,7 +58,7 @@ export function GraphToolbar({
                     </button>
 
                     {isDropdownOpen && (
-                        <div className="absolute top-full right-0 mt-2 w-48 rounded-xl overflow-hidden border border-white/10 shadow-2xl animate-fade-in" style={{ background: 'rgba(10,14,26,0.95)', backdropFilter: 'blur(20px)' }}>
+                        <div className="absolute top-full right-0 mt-2 w-48 rounded-xl overflow-hidden border border-white/10 shadow-2xl animate-fade-in" style={{ background: 'var(--dash-surface)', backdropFilter: 'blur(20px)' }}>
                             {LAYOUTS.map(layout => (
                                 <button
                                     key={layout.id}
@@ -84,7 +84,7 @@ export function GraphToolbar({
 
 export function GraphLegend() {
     return (
-        <div className="absolute bottom-6 left-6 z-10 flex flex-wrap gap-x-5 gap-y-2 px-4 py-3 rounded-xl border border-white/5" style={{ background: 'rgba(6,9,18,0.7)', backdropFilter: 'blur(12px)' }}>
+        <div className="absolute bottom-6 left-6 z-10 flex flex-wrap gap-x-5 gap-y-2 px-4 py-3 rounded-xl border border-white/5" style={{ background: 'var(--dash-surface)', backdropFilter: 'blur(12px)' }}>
             {Object.entries(NODE_COLORS).filter(([k]) => k !== 'unknown').map(([type, color]) => (
                 <span key={type} className="text-[10px] text-white/40 uppercase tracking-wider font-semibold flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full" style={{ backgroundColor: color, boxShadow: `0 0 8px ${color}` }} />
@@ -107,7 +107,7 @@ interface GraphNodeInfoProps {
 export function GraphNodeInfo({ selectedNode, inboundCount, outboundCount, onDeselect }: GraphNodeInfoProps) {
     return (
         <div className={`absolute bottom-6 right-6 z-10 w-72 transition-all duration-500 ${selectedNode ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
-            <div className="rounded-2xl border border-white/10 p-5 space-y-4" style={{ background: 'rgba(6,9,18,0.85)', backdropFilter: 'blur(20px)' }}>
+            <div className="rounded-2xl border border-white/10 p-5 space-y-4" style={{ background: 'var(--dash-surface)', backdropFilter: 'blur(20px)' }}>
                 {selectedNode && (
                     <>
                         {/* Header */}

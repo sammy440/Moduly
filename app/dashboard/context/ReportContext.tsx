@@ -11,15 +11,12 @@ interface ReportContextType {
     report: ReportData | null;
     loadReport: (data: ReportData) => void;
     clearReport: () => void;
-    activeTab: TabType;
-    setActiveTab: (tab: TabType) => void;
 }
 
 const ReportContext = createContext<ReportContextType | undefined>(undefined);
 
 export function ReportProvider({ children }: { children: ReactNode }) {
     const [report, setReport] = useState<ReportData | null>(null);
-    const [activeTab, setActiveTab] = useState<TabType>('arch');
 
     const loadReport = (data: ReportData) => {
         setReport(data);
@@ -72,7 +69,7 @@ export function ReportProvider({ children }: { children: ReactNode }) {
     }, []);
 
     return (
-        <ReportContext.Provider value={{ report, loadReport, clearReport, activeTab, setActiveTab }}>
+        <ReportContext.Provider value={{ report, loadReport, clearReport }}>
             {children}
         </ReportContext.Provider>
     );

@@ -79,7 +79,7 @@ export function AISuggestionsPanel() {
         <div className="w-1/3 glass rounded-[3rem] p-8 overflow-y-auto">
             <div className="flex items-center gap-3 mb-6">
                 <Cpu size={28} className="text-[#9F7AEA]" />
-                <h2 className="text-xl font-bold tracking-tight">AI Architecture Insights</h2>
+                <h2 className="text-xl font-bold tracking-tight text-white">AI Architecture Insights</h2>
             </div>
 
             <p className="text-sm text-white/50 font-medium mb-8">

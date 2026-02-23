@@ -36,7 +36,7 @@ function MetricCard({ label, value, icon: Icon, color, gradient, delay = 0 }: {
             variants={itemVariants}
             whileHover={{ scale: 1.02, y: -2 }}
             className="relative overflow-hidden rounded-2xl border border-white/[0.06] p-6 group cursor-default"
-            style={{ background: 'rgba(15,23,42,0.5)', backdropFilter: 'blur(16px)' }}
+            style={{ background: 'var(--dash-surface)', backdropFilter: 'blur(16px)' }}
         >
             {/* Gradient accent line */}
             <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: gradient }} />
@@ -118,7 +118,7 @@ export function PerformancePanel() {
                 <motion.div
                     variants={scaleIn}
                     className="col-span-3 rounded-2xl border border-white/[0.06] p-6"
-                    style={{ background: 'rgba(15,23,42,0.5)', backdropFilter: 'blur(16px)' }}
+                    style={{ background: 'var(--dash-surface)', backdropFilter: 'blur(16px)' }}
                 >
                     <div className="flex items-center justify-between mb-5">
                         <div className="flex items-center gap-3">
@@ -139,8 +139,8 @@ export function PerformancePanel() {
                                 <YAxis stroke="rgba(255,255,255,0.15)" fontSize={10} tickLine={false} axisLine={false} />
                                 <RechartsTooltip
                                     cursor={{ fill: 'rgba(91,156,255,0.04)' }}
-                                    contentStyle={{ backgroundColor: 'rgba(10,15,30,0.95)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '10px', fontSize: '11px', backdropFilter: 'blur(12px)' }}
-                                    labelStyle={{ color: '#fff', fontWeight: 700 }}
+                                    contentStyle={{ backgroundColor: 'var(--dash-surface)', border: '1px solid var(--dash-border)', borderRadius: '10px', fontSize: '11px', backdropFilter: 'blur(12px)', color: 'var(--dash-text)' }}
+                                    labelStyle={{ color: 'var(--dash-text)', fontWeight: 700 }}
                                 />
                                 <Bar dataKey="size" radius={[6, 6, 0, 0]} barSize={24}>
                                     {fileChartData.map((_: any, i: number) => (
@@ -163,7 +163,7 @@ export function PerformancePanel() {
                 <motion.div
                     variants={scaleIn}
                     className="col-span-2 rounded-2xl border border-white/[0.06] p-6"
-                    style={{ background: 'rgba(15,23,42,0.5)', backdropFilter: 'blur(16px)' }}
+                    style={{ background: 'var(--dash-surface)', backdropFilter: 'blur(16px)' }}
                 >
                     <div className="flex items-center gap-3 mb-5">
                         <div className="w-8 h-8 rounded-lg bg-[#FFB84C]/10 flex items-center justify-center border border-[#FFB84C]/20">
@@ -187,8 +187,8 @@ export function PerformancePanel() {
                                 <XAxis dataKey="t" stroke="rgba(255,255,255,0.15)" fontSize={10} tickLine={false} axisLine={false} />
                                 <YAxis stroke="rgba(255,255,255,0.15)" fontSize={10} tickLine={false} axisLine={false} domain={[0, 100]} />
                                 <RechartsTooltip
-                                    contentStyle={{ backgroundColor: 'rgba(10,15,30,0.95)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '10px', fontSize: '11px' }}
-                                    labelStyle={{ color: '#fff', fontWeight: 700 }}
+                                    contentStyle={{ backgroundColor: 'var(--dash-surface)', border: '1px solid var(--dash-border)', borderRadius: '10px', fontSize: '11px', color: 'var(--dash-text)' }}
+                                    labelStyle={{ color: 'var(--dash-text)', fontWeight: 700 }}
                                 />
                                 <Area type="monotone" dataKey="value" stroke="#FFB84C" strokeWidth={2} fill="url(#loadGradient)" />
                             </AreaChart>
@@ -203,7 +203,7 @@ export function PerformancePanel() {
                 <motion.div
                     variants={itemVariants}
                     className="rounded-2xl border border-white/[0.06] p-6 flex flex-col"
-                    style={{ background: 'rgba(15,23,42,0.5)', backdropFilter: 'blur(16px)' }}
+                    style={{ background: 'var(--dash-surface)', backdropFilter: 'blur(16px)' }}
                 >
                     <div className="flex items-center gap-3 mb-5">
                         <div className="w-8 h-8 rounded-lg bg-yellow-400/10 flex items-center justify-center border border-yellow-400/20">
@@ -250,7 +250,7 @@ export function PerformancePanel() {
                 <motion.div
                     variants={itemVariants}
                     className="rounded-2xl border border-white/[0.06] p-6 flex flex-col"
-                    style={{ background: 'rgba(15,23,42,0.5)', backdropFilter: 'blur(16px)' }}
+                    style={{ background: 'var(--dash-surface)', backdropFilter: 'blur(16px)' }}
                 >
                     <div className="flex items-center gap-3 mb-5">
                         <div className="w-8 h-8 rounded-lg bg-[#FF6B6B]/10 flex items-center justify-center border border-[#FF6B6B]/20">

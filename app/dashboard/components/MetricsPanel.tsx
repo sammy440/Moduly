@@ -27,17 +27,22 @@ export function MetricsPanel() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.1 }}
                     whileHover={{ y: -5 }}
-                    className="glass rounded-3xl p-6 relative overflow-hidden group"
+                    className="rounded-3xl p-6 relative overflow-hidden group transition-colors duration-500"
+                    style={{
+                        background: 'var(--dash-surface)',
+                        border: '1px solid var(--dash-border)',
+                        backdropFilter: 'blur(12px)',
+                    }}
                 >
                     <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
                         <stat.icon size={80} style={{ color: stat.color }} />
                     </div>
 
                     <div className="flex items-center gap-3 mb-4">
-                        <div className="p-2 rounded-lg bg-white/5">
+                        <div className="p-2 rounded-lg" style={{ background: 'var(--dash-hover)' }}>
                             <stat.icon size={18} style={{ color: stat.color }} />
                         </div>
-                        <span className="text-sm font-medium text-white/40 uppercase tracking-widest">{stat.label}</span>
+                        <span className="text-sm font-medium uppercase tracking-widest" style={{ color: 'var(--dash-text-muted)' }}>{stat.label}</span>
                     </div>
 
                     <div className="flex items-end justify-between h-[60px]">
@@ -45,7 +50,7 @@ export function MetricsPanel() {
                             <span className="text-4xl font-bold tracking-tighter" style={{ color: stat.color }}>
                                 {stat.value}
                             </span>
-                            <span className="text-sm font-medium text-white/20">{stat.suffix}</span>
+                            <span className="text-sm font-medium" style={{ color: 'var(--dash-text-faint)' }}>{stat.suffix}</span>
                         </div>
 
                         {/* Mini Recharts Inline */}
@@ -55,7 +60,7 @@ export function MetricsPanel() {
                                     <PieChart>
                                         <Pie data={[{ value: report.score }, { value: 100 - report.score }]} innerRadius={20} outerRadius={25} dataKey="value" startAngle={90} endAngle={-270}>
                                             <Cell fill={stat.color} />
-                                            <Cell fill="rgba(255,255,255,0.05)" />
+                                            <Cell fill="var(--dash-hover)" />
                                         </Pie>
                                     </PieChart>
                                 </ResponsiveContainer>

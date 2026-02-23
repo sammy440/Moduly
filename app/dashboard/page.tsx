@@ -1,27 +1,33 @@
 "use client";
 
 import React from 'react';
-import { Sidebar } from './components/Sidebar';
-import { Header } from './components/Header';
-import { DashboardContent } from './components/DashboardContent';
-import { ReportProvider } from './context/ReportContext';
+import { motion } from 'framer-motion';
+import { MetricsPanel } from './components/MetricsPanel';
+import { AISuggestionsPanel } from './components/AISuggestionsPanel';
+import { UploadSection } from './components/UploadSection';
+import { useReport } from './context/ReportContext';
+import dynamic from 'next/dynamic';
 
-export default function Dashboard() {
+const GraphContainer = dynamic(() => import("./components/GraphContainer").then(mod => mod.GraphContainer), { ssr: false });
+
+export default function DashboardPage() {
+    const { report } = useReport();
+
+    if (!report) {
+        return <UploadSection />;
+    }
+
     return (
-        <ReportProvider>
-            <div className="flex h-screen bg-[#060912] overflow-hidden">
-                <Sidebar />
-
-                <main className="flex-1 flex flex-col relative">
-                    <Header />
-
-                    <DashboardContent />
-
-                    {/* Decorative Background Elements */}
-                    <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px] -z-10 animate-pulse"></div>
-                    <div className="absolute bottom-[-10%] left-[-10%] w-[30%] h-[30%] bg-secondary/10 rounded-full blur-[100px] -z-10"></div>
-                </main>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="flex-1 flex flex-col overflow-y-auto"
+        >
+            <MetricsPanel />
+            <div className="flex flex-1 mx-10 mb-10 gap-6">
+                <GraphContainer />
+                <AISuggestionsPanel />
             </div>
-        </ReportProvider>
+        </motion.div>
     );
 }

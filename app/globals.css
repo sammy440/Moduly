@@ -12,6 +12,22 @@
     --hotspot: #FF6B6B;
     --card: rgba(15, 23, 42, 0.6);
     --border: rgba(255, 255, 255, 0.08);
+
+    /* Dashboard-specific tokens */
+    --dash-bg: #060912;
+    --dash-surface: rgba(15, 23, 42, 0.5);
+    --dash-card: rgba(15, 23, 42, 0.6);
+    --dash-border: rgba(255, 255, 255, 0.06);
+    --dash-text: #ffffff;
+    --dash-text-secondary: rgba(255, 255, 255, 0.6);
+    --dash-text-muted: rgba(255, 255, 255, 0.35);
+    --dash-text-faint: rgba(255, 255, 255, 0.15);
+    --dash-hover: rgba(255, 255, 255, 0.05);
+    --dash-input-bg: rgba(255, 255, 255, 0.05);
+    --dash-input-border: rgba(255, 255, 255, 0.1);
+    --dash-divider: rgba(255, 255, 255, 0.05);
+    --dash-glow-1: rgba(91, 156, 255, 0.1);
+    --dash-glow-2: rgba(159, 122, 234, 0.1);
   }
 }
 
@@ -36,6 +52,306 @@ h4,
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border);
+}
+
+/* ─── Light mode overrides ──────────────────────────────────────────────── */
+
+.dashboard-light {
+  --dash-bg: #f0f2f7;
+  --dash-surface: rgba(255, 255, 255, 0.85);
+  --dash-card: rgba(255, 255, 255, 0.75);
+  --dash-border: rgba(0, 0, 0, 0.08);
+  --dash-text: #1a1a2e;
+  --dash-text-secondary: rgba(26, 26, 46, 0.65);
+  --dash-text-muted: rgba(26, 26, 46, 0.5);
+  --dash-text-faint: rgba(26, 26, 46, 0.15);
+  --dash-hover: rgba(0, 0, 0, 0.04);
+  --dash-input-bg: rgba(0, 0, 0, 0.04);
+  --dash-input-border: rgba(0, 0, 0, 0.12);
+  --dash-divider: rgba(0, 0, 0, 0.06);
+  --dash-glow-1: rgba(91, 156, 255, 0.06);
+  --dash-glow-2: rgba(159, 122, 234, 0.05);
+  --card: rgba(255, 255, 255, 0.75);
+  --border: rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-light .glass {
+  background: var(--dash-card);
+  border-color: var(--dash-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/*
+   TEXT REMAPPING
+   In dark mode, text-white/30 = white at 30% opacity = subtle on dark bg.
+   In light mode, we BOOST opacity so dark text is legible on light bg.
+   white/20 → dark at 50%,  white/30 → dark at 65%,  etc.
+*/
+.dashboard-light .text-white {
+  color: #1a1a2e !important;
+}
+
+.dashboard-light .text-white\/90 {
+  color: rgba(26, 26, 46, 0.95) !important;
+}
+
+.dashboard-light .text-white\/80 {
+  color: rgba(26, 26, 46, 0.85) !important;
+}
+
+.dashboard-light .text-white\/70 {
+  color: rgba(26, 26, 46, 0.75) !important;
+}
+
+.dashboard-light .text-white\/60 {
+  color: rgba(26, 26, 46, 0.7) !important;
+}
+
+.dashboard-light .text-white\/50 {
+  color: rgba(26, 26, 46, 0.6) !important;
+}
+
+.dashboard-light .text-white\/45 {
+  color: rgba(26, 26, 46, 0.58) !important;
+}
+
+.dashboard-light .text-white\/40 {
+  color: rgba(26, 26, 46, 0.55) !important;
+}
+
+.dashboard-light .text-white\/35 {
+  color: rgba(26, 26, 46, 0.52) !important;
+}
+
+.dashboard-light .text-white\/30 {
+  color: rgba(26, 26, 46, 0.5) !important;
+}
+
+.dashboard-light .text-white\/25 {
+  color: rgba(26, 26, 46, 0.45) !important;
+}
+
+.dashboard-light .text-white\/20 {
+  color: rgba(26, 26, 46, 0.4) !important;
+}
+
+
+/* Hover text */
+.dashboard-light .hover\:text-white:hover {
+  color: #1a1a2e !important;
+}
+
+.dashboard-light .hover\:text-white\/60:hover {
+  color: rgba(26, 26, 46, 0.7) !important;
+}
+
+.dashboard-light .hover\:text-white\/90:hover {
+  color: rgba(26, 26, 46, 0.95) !important;
+}
+
+.dashboard-light .group-hover\:text-white\/90 {
+  color: rgba(26, 26, 46, 0.9) !important;
+}
+
+.dashboard-light .group:hover .group-hover\:text-white\/90 {
+  color: rgba(26, 26, 46, 0.95) !important;
+}
+
+/*
+   SURFACE BACKGROUNDS — inline styles
+   React renders rgba with spaces: rgba(15, 23, 42, 0.5)
+   We match BOTH spaced and non-spaced patterns.
+*/
+.dashboard-light [style*="rgba(15, 23, 42"] {
+  background: rgba(255, 255, 255, 0.82) !important;
+}
+
+.dashboard-light [style*="rgba(15,23,42"] {
+  background: rgba(255, 255, 255, 0.82) !important;
+}
+
+.dashboard-light [style*="rgba(6, 9, 18"] {
+  background: rgba(255, 255, 255, 0.88) !important;
+}
+
+.dashboard-light [style*="rgba(6,9,18"] {
+  background: rgba(255, 255, 255, 0.88) !important;
+}
+
+.dashboard-light [style*="rgba(10, 14, 26"] {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.dashboard-light [style*="rgba(10,14,26"] {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.dashboard-light [style*="rgba(10, 15, 30"] {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.dashboard-light [style*="rgba(10,15,30"] {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* GraphContainer background gradient */
+.dashboard-light .from-\[\#060912\] {
+  --tw-gradient-from: #e8ecf4 !important;
+}
+
+.dashboard-light .via-\[\#0a0e1a\] {
+  --tw-gradient-via: #edf0f7 !important;
+}
+
+.dashboard-light .to-\[\#0d1225\] {
+  --tw-gradient-to: #e8ecf4 !important;
+}
+
+/* Tailwind bg-white utilities → subtle dark tints */
+.dashboard-light .bg-white\/5 {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.dashboard-light .bg-white\/10 {
+  background-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+.dashboard-light .bg-white\/\[0\.02\] {
+  background-color: rgba(0, 0, 0, 0.02) !important;
+}
+
+.dashboard-light .bg-white\/\[0\.03\] {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+.dashboard-light .bg-white\/\[0\.05\] {
+  background-color: rgba(0, 0, 0, 0.035) !important;
+}
+
+/* Dark bg utilities → light equivalents */
+.dashboard-light .bg-black\/30 {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.dashboard-light .bg-black\/50 {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.dashboard-light .bg-\[\#060912\] {
+  background-color: #f0f2f7 !important;
+}
+
+.dashboard-light .bg-\[\#0B0F19\] {
+  background-color: #e8ecf4 !important;
+}
+
+.dashboard-light .bg-\[\#0d1323\] {
+  background-color: rgba(255, 255, 255, 0.65) !important;
+}
+
+.dashboard-light .bg-\[\#0f111a\] {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Border utilities → dark equivalents */
+.dashboard-light .border-white\/5 {
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+.dashboard-light .border-white\/10 {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.dashboard-light .border-white\/\[0\.03\] {
+  border-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.dashboard-light .border-white\/\[0\.04\] {
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+.dashboard-light .border-white\/\[0\.06\] {
+  border-color: rgba(0, 0, 0, 0.07) !important;
+}
+
+.dashboard-light .border-white\/\[0\.07\] {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+.dashboard-light .border-white\/\[0\.08\] {
+  border-color: rgba(0, 0, 0, 0.09) !important;
+}
+
+.dashboard-light .border-\[\#0B0F19\] {
+  border-color: #f0f2f7 !important;
+}
+
+/* Hover states */
+.dashboard-light .hover\:bg-white\/5:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.dashboard-light .hover\:bg-white\/10:hover {
+  background-color: rgba(0, 0, 0, 0.07) !important;
+}
+
+.dashboard-light .hover\:bg-white\/\[0\.05\]:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.dashboard-light .hover\:bg-white\/\[0\.06\]:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.dashboard-light .hover\:bg-white\/\[0\.07\]:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Accent CCFF00 is nearly invisible on light — darken it */
+.dashboard-light .text-\[\#CCFF00\] {
+  color: #7a9900 !important;
+}
+
+.dashboard-light .bg-\[\#CCFF00\]\/10 {
+  background-color: rgba(122, 153, 0, 0.1) !important;
+}
+
+/* Scrollbar in light mode */
+.dashboard-light ::-webkit-scrollbar-thumb {
+  background: rgba(91, 156, 255, 0.3);
+}
+
+.dashboard-light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(91, 156, 255, 0.5);
+}
+
+/* Neon glow effects soften in light */
+.dashboard-light .neon-glow-blue {
+  box-shadow: 0 0 12px rgba(91, 156, 255, 0.12);
+}
+
+.dashboard-light .neon-glow-accent {
+  box-shadow: 0 0 12px rgba(122, 153, 0, 0.12);
+}
+
+/* Recharts axis/grid in light mode */
+.dashboard-light .recharts-cartesian-axis-tick-value {
+  fill: rgba(26, 26, 46, 0.5) !important;
+}
+
+.dashboard-light .recharts-cartesian-grid-horizontal line,
+.dashboard-light .recharts-cartesian-grid-vertical line {
+  stroke: rgba(26, 26, 46, 0.06) !important;
+}
+
+.dashboard-light .recharts-cartesian-axis-line,
+.dashboard-light .recharts-cartesian-axis-tick-line {
+  stroke: rgba(26, 26, 46, 0.1) !important;
+}
+
+.dashboard-light .recharts-legend-item-text {
+  color: rgba(26, 26, 46, 0.6) !important;
 }
 
 .neon-glow-blue {
