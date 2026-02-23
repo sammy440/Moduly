@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutDashboard, Share2, Activity, ShieldAlert, Settings, ChevronLeft, ChevronRight, Sun, Moon, X } from 'lucide-react';
+import { LayoutDashboard, Share2, Activity, ShieldAlert, Settings, ChevronLeft, ChevronRight, Sun, Moon, X, Hexagon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -58,13 +58,16 @@ export function Sidebar() {
         >
             <div className="flex items-center justify-between mb-10 px-2">
                 {!isCollapsed && (
-                    <motion.span
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        className="text-2xl font-bold tracking-tighter text-primary neon-glow-blue"
-                    >
-                        MODULY
-                    </motion.span>
+                    <div className="flex ml-4 items-center gap-3">
+                        <Hexagon className="absolute text-primary animate-[spin_10s_linear_infinite]" size={24} />
+                        <motion.span
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            className="ml-8 text-2xl font-serif font-bold tracking-tighter text-primary"
+                        >
+                            Moduly
+                        </motion.span>
+                    </div>
                 )}
                 <button
                     onClick={() => setIsCollapsed(!isCollapsed)}

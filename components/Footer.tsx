@@ -17,7 +17,7 @@ export function Footer() {
                             <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
                                 <Terminal className="w-5 h-5 text-primary" />
                             </div>
-                            <span className="font-instrument text-2xl tracking-wide">Moduly</span>
+                            <span className="font-serif text-2xl tracking-wide">Moduly</span>
                         </Link>
                         <p className="text-white/50 text-base max-w-sm leading-relaxed">
                             Elevate your developer experience with high-end, interactive architecture maps and dependency visualizations.
@@ -26,27 +26,21 @@ export function Footer() {
                             <a href="#" className="p-2.5 rounded-lg border border-white/10 text-white/50 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all duration-300">
                                 <Github className="w-5 h-5" />
                             </a>
-                            <a href="#" className="p-2.5 rounded-lg border border-white/10 text-white/50 hover:text-[#1DA1F2] hover:border-[#1DA1F2]/30 hover:bg-[#1DA1F2]/10 transition-all duration-300">
-                                <Twitter className="w-5 h-5" />
-                            </a>
-                            <a href="#" className="p-2.5 rounded-lg border border-white/10 text-white/50 hover:text-[#0A66C2] hover:border-[#0A66C2]/30 hover:bg-[#0A66C2]/10 transition-all duration-300">
-                                <Linkedin className="w-5 h-5" />
-                            </a>
                         </div>
                     </div>
 
                     {/* Links Group 1 */}
                     <div className="col-span-1 md:col-span-7 flex flex-col items-start md:items-end gap-4 mt-8 md:mt-0">
                         <h4 className="text-white font-medium text-sm tracking-widest uppercase mb-2">Product</h4>
-                        <Link href="#" className="text-white/50 hover:text-primary transition-colors flex items-center md:flex-row-reverse gap-2 group w-max">
+                        <Link href="/product#features" className="text-white/50 hover:text-primary transition-colors flex items-center md:flex-row-reverse gap-2 group w-max">
                             Features
                             <ArrowUpRight className="w-3 h-3 opacity-0 translate-y-1 md:-translate-y-1 -translate-x-1 md:translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all" />
                         </Link>
-                        <Link href="#" className="text-white/50 hover:text-primary transition-colors flex items-center md:flex-row-reverse gap-2 group w-max">
+                        <Link href="/product#cli" className="text-white/50 hover:text-primary transition-colors flex items-center md:flex-row-reverse gap-2 group w-max">
                             CLI Tool
                             <ArrowUpRight className="w-3 h-3 opacity-0 translate-y-1 md:-translate-y-1 -translate-x-1 md:translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all" />
                         </Link>
-                        <Link href="#" className="text-white/50 hover:text-primary transition-colors flex items-center md:flex-row-reverse gap-2 group w-max">
+                        <Link href="/product#docs" className="text-white/50 hover:text-primary transition-colors flex items-center md:flex-row-reverse gap-2 group w-max">
                             Documentation
                             <ArrowUpRight className="w-3 h-3 opacity-0 translate-y-1 md:-translate-y-1 -translate-x-1 md:translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all" />
                         </Link>
