@@ -16,6 +16,31 @@ const instrument = Instrument_Serif({
 export const metadata: Metadata = {
   title: "Moduly | Project Architecture Visualizer",
   description: "High-end interactive architecture & dependency visualization for modern developers.",
+  icons: {
+    icon: "/favicon.svg",
+  },
+  openGraph: {
+    title: "Moduly | Project Architecture Visualizer",
+    description: "High-end interactive architecture & dependency visualization for modern developers.",
+    url: "https://moduly.vercel.app",
+    siteName: "Moduly",
+    images: [
+      {
+        url: "/webpage.png",
+        width: 1200,
+        height: 630,
+        alt: "Moduly Project Architecture Visualizer",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Moduly | Project Architecture Visualizer",
+    description: "High-end interactive architecture & dependency visualization for modern developers.",
+    images: ["/webpage.png"],
+  },
 };
 
 export default function RootLayout({
