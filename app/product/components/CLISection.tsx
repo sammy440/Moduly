@@ -64,19 +64,19 @@ export function CLISection() {
                     <motion.div
                         whileHover={{ scale: 1.04, y: -4 }}
                         transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                        className="inline-flex items-center gap-4 p-5 pr-7 rounded-2xl border border-white/10 hover:border-primary/40 transition-colors cursor-pointer group relative overflow-hidden"
+                        className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 p-4 sm:p-5 sm:pr-7 rounded-2xl border border-white/10 hover:border-primary/40 transition-colors cursor-pointer group relative overflow-hidden w-full max-w-[280px] sm:max-w-none sm:w-auto"
                         style={{ background: 'rgba(15,23,42,0.6)', backdropFilter: 'blur(20px)' }}
                         onClick={() => handleCopy("npm i -g moduly-cli")}
                     >
                         <motion.div
                             className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                         />
-                        <div className="p-3 bg-primary/10 rounded-xl text-primary relative z-10 group-hover:scale-110 transition-transform">
-                            <Terminal size={24} />
+                        <div className="p-2 sm:p-3 bg-primary/10 rounded-xl text-primary relative z-10 group-hover:scale-110 transition-transform">
+                            <Terminal className="w-5 h-5 sm:w-6 sm:h-6" />
                         </div>
-                        <code className="font-mono text-xl text-white/90 relative z-10">npm i -g moduly-cli</code>
-                        <div className="p-2 bg-white/5 rounded-lg text-white/40 group-hover:text-primary transition-colors ml-3 relative z-10">
-                            {copied === "npm i -g moduly-cli" ? <CheckCircle size={18} className="text-green-400" /> : <Copy size={18} />}
+                        <code className="font-mono text-lg sm:text-xl text-white/90 relative z-10 text-center">npm i -g moduly-cli</code>
+                        <div className="p-2 bg-white/5 rounded-lg text-white/40 group-hover:text-primary transition-colors sm:ml-3 relative z-10">
+                            {copied === "npm i -g moduly-cli" ? <CheckCircle className="text-green-400 w-4 h-4 sm:w-[18px] sm:h-[18px]" /> : <Copy className="w-4 h-4 sm:w-[18px] sm:h-[18px]" />}
                         </div>
                     </motion.div>
                 </motion.div>
@@ -91,7 +91,7 @@ export function CLISection() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.7, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-                            className={`relative p-8 rounded-3xl border border-white/[0.06] overflow-hidden group ${i % 2 === 0 ? 'md:ml-0 md:mr-16' : 'md:ml-16 md:mr-0'
+                            className={`relative p-6 md:p-8 rounded-3xl border border-white/[0.06] overflow-hidden group ${i % 2 === 0 ? 'md:ml-0 md:mr-16' : 'md:ml-16 md:mr-0'
                                 }`}
                             style={{ background: 'rgba(15,23,42,0.4)', backdropFilter: 'blur(12px)' }}
                         >
@@ -107,7 +107,7 @@ export function CLISection() {
                                     >
                                         $
                                     </motion.span>
-                                    <code className="font-mono text-xl text-white/90">{cmd.command}</code>
+                                    <code className="font-mono text-lg md:text-xl text-white/90 break-all">{cmd.command}</code>
                                 </div>
                                 <button
                                     onClick={() => handleCopy(cmd.command)}
@@ -157,7 +157,7 @@ export function CLISection() {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
                                     whileHover={{ x: 12 }}
-                                    className="flex items-start gap-5 p-5 rounded-2xl border border-white/[0.04] hover:border-white/[0.1] transition-all group cursor-default md:ml-16"
+                                    className="flex flex-col sm:flex-row items-start gap-4 sm:gap-5 p-4 sm:p-5 rounded-2xl border border-white/[0.04] hover:border-white/[0.1] transition-all group cursor-default md:ml-16"
                                     style={{ background: 'rgba(15,23,42,0.25)' }}
                                 >
                                     {/* Dot on the timeline */}

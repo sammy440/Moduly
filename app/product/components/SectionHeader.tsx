@@ -30,10 +30,10 @@ export function SectionHeader({ badge, title, highlight, description }: {
             <motion.div {...fadeUp} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-6">
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">{badge}</span>
             </motion.div>
-            <motion.h2 {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }} className="text-4xl md:text-6xl font-serif mb-6">
+            <motion.h2 {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }} className="text-3xl sm:text-4xl md:text-6xl font-serif mb-4 md:mb-6 leading-tight">
                 {title} <span className="text-primary italic">{highlight}</span>
             </motion.h2>
-            <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }} className="text-white/50 text-lg leading-relaxed">
+            <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }} className="text-white/50 text-base md:text-lg leading-relaxed">
                 {description}
             </motion.p>
         </div>

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "Moduly | Project Architecture Visualizer",
   description: "High-end interactive architecture & dependency visualization for modern developers.",
   icons: {
-    icon: "/favicon.svg",
+    icon: "/metadataic.svg",
   },
   openGraph: {
     title: "Moduly | Project Architecture Visualizer",

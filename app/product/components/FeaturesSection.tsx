@@ -121,16 +121,16 @@ export function ProductFeaturesSection() {
             />
 
             {/* Bento Grid Layout */}
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 auto-rows-[180px]">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 auto-rows-auto md:auto-rows-[180px]">
                 {features.map((feature, i) => (
                     <TiltCard
                         key={i}
-                        className={`${feature.span}`}
+                        className={`${feature.span} min-h-[180px] md:min-h-0`}
                     >
                         <motion.div
                             {...stagger}
                             transition={{ duration: 0.7, delay: i * 0.07 }}
-                            className={`group relative h-full rounded-3xl border border-white/[0.06] overflow-hidden cursor-default ${feature.size === 'large' ? 'p-10' : feature.size === 'wide' ? 'p-8' : 'p-6'
+                            className={`group relative h-full rounded-3xl border border-white/[0.06] overflow-hidden cursor-default ${feature.size === 'large' ? 'p-6 sm:p-8 md:p-10' : feature.size === 'wide' ? 'p-6 sm:p-8' : 'p-5 sm:p-6'
                                 }`}
                             style={{ background: 'rgba(15,23,42,0.4)', backdropFilter: 'blur(16px)' }}
                         >
@@ -162,12 +162,12 @@ export function ProductFeaturesSection() {
                                         </div>
                                     </div>
 
-                                    <h3 className={`font-bold text-white mb-2 ${feature.size === 'large' ? 'text-3xl' : feature.size === 'wide' ? 'text-2xl' : 'text-lg'}`}>
+                                    <h3 className={`font-bold text-white mb-2 ${feature.size === 'large' ? 'text-2xl sm:text-3xl' : feature.size === 'wide' ? 'text-xl sm:text-2xl' : 'text-lg'}`}>
                                         {feature.title}
                                     </h3>
                                 </div>
 
-                                <p className={`text-white/40 leading-relaxed ${feature.size === 'large' ? 'text-base max-w-md' : 'text-sm'}`}>
+                                <p className={`text-white/40 leading-relaxed ${feature.size === 'large' ? 'text-sm sm:text-base max-w-md' : 'text-sm'}`}>
                                     {feature.description}
                                 </p>
                             </div>

@@ -108,11 +108,11 @@ export function DocsSection() {
                                     <motion.div
                                         whileHover={{ y: -6 }}
                                         transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                                        className="p-5 rounded-2xl border border-white/[0.06] text-center group-hover:border-primary/20 transition-colors"
+                                        className="p-4 sm:p-5 rounded-2xl border border-white/[0.06] text-center group-hover:border-primary/20 transition-colors"
                                         style={{ background: 'rgba(15,23,42,0.3)' }}
                                     >
                                         <h4 className="text-base font-bold text-white/80 mb-2">{item.title}</h4>
-                                        <code className="text-xs font-mono text-primary/70 bg-primary/5 px-2.5 py-1 rounded-lg inline-block mb-3">{item.code}</code>
+                                        <code className="text-[11px] sm:text-xs font-mono text-primary/70 bg-primary/5 px-2.5 py-1 rounded-lg inline-block mb-3 break-all">{item.code}</code>
                                         <p className="text-xs text-white/30 leading-relaxed">{item.desc}</p>
                                     </motion.div>
                                 </motion.div>
@@ -138,16 +138,16 @@ export function DocsSection() {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: i * 0.08 }}
                                 whileHover={{ x: i % 2 === 0 ? 8 : -8 }}
-                                className="flex items-center gap-6 p-5 rounded-2xl border border-white/[0.04] hover:border-white/[0.1] transition-all"
+                                className="flex flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-6 p-4 sm:p-5 rounded-2xl border border-white/[0.04] hover:border-white/[0.1] transition-all"
                                 style={{ background: 'rgba(15,23,42,0.25)' }}
                             >
-                                <div className="w-36 shrink-0">
+                                <div className="w-1/2 sm:w-36 shrink-0 order-1">
                                     <span className="text-sm font-bold text-white/70">{opt.option}</span>
                                 </div>
-                                <div className="flex-1 text-sm text-white/35">{opt.desc}</div>
-                                <span className="text-[10px] font-bold uppercase tracking-wider text-[#9F7AEA]/70 bg-[#9F7AEA]/10 px-3 py-1.5 rounded-lg shrink-0 border border-[#9F7AEA]/15">
+                                <span className="text-[10px] font-bold uppercase tracking-wider text-[#9F7AEA]/70 bg-[#9F7AEA]/10 px-3 py-1.5 rounded-lg shrink-0 border border-[#9F7AEA]/15 order-2 sm:order-3 ml-auto sm:ml-0">
                                     {opt.scope}
                                 </span>
+                                <div className="w-full sm:flex-1 text-sm text-white/35 order-3 sm:order-2">{opt.desc}</div>
                             </motion.div>
                         ))}
                     </div>
@@ -172,7 +172,7 @@ export function DocsSection() {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: i * 0.06 }}
                                     whileHover={{ x: 8 }}
-                                    className="flex items-center gap-5 p-5 rounded-2xl border border-white/[0.04] hover:border-white/[0.08] transition-all relative overflow-hidden group"
+                                    className="flex flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-5 p-4 sm:p-5 rounded-2xl border border-white/[0.04] hover:border-white/[0.08] transition-all relative overflow-hidden group"
                                     style={{ background: 'rgba(15,23,42,0.25)' }}
                                 >
                                     {/* Severity bar */}
@@ -185,19 +185,20 @@ export function DocsSection() {
                                         transition={{ duration: 0.4, delay: i * 0.06 + 0.2 }}
                                     />
 
-                                    <AlertTriangle size={18} style={{ color }} className="shrink-0" />
+                                    <AlertTriangle size={18} style={{ color }} className="shrink-0 order-1" />
 
-                                    <div className="flex-1 min-w-0">
-                                        <code className="font-mono text-base text-white/80">{p.pattern}</code>
-                                        <span className="text-xs text-white/20 ml-3">{p.category}</span>
+                                    <div className="flex-1 min-w-0 order-2 w-full sm:w-auto mt-2 sm:mt-0 basis-full sm:basis-auto">
+                                        <code className="font-mono text-sm sm:text-base text-white/80 break-all">{p.pattern}</code>
+                                        <span className="text-[11px] sm:text-xs text-white/20 block sm:inline mt-1 sm:mt-0 sm:ml-3">{p.category}</span>
                                     </div>
 
                                     <motion.span
+
                                         initial={{ scale: 0 }}
                                         whileInView={{ scale: 1 }}
                                         viewport={{ once: true }}
                                         transition={{ type: "spring", stiffness: 500, damping: 25, delay: i * 0.06 + 0.3 }}
-                                        className="text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg shrink-0"
+                                        className="text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg shrink-0 order-1 sm:order-3 ml-auto sm:ml-0"
                                         style={{ background: `${color}18`, color, border: `1px solid ${color}30` }}
                                     >
                                         {p.severity}
@@ -248,20 +249,20 @@ export function DocsSection() {
                                             background: 'rgba(15,23,42,0.4)',
                                             backdropFilter: 'blur(16px)'
                                         }}
-                                        className="w-full p-5 rounded-2xl border border-white/5 flex items-center justify-between gap-6 hover:bg-white/5 transition-all duration-300 shadow-2xl hover:scale-[1.02] hover:border-white/20 group relative overflow-hidden"
+                                        className="w-full p-4 sm:p-5 rounded-2xl border border-white/5 flex items-center justify-between gap-4 sm:gap-6 hover:bg-white/5 transition-all duration-300 shadow-2xl hover:scale-[1.02] hover:border-white/20 group relative overflow-hidden"
                                     >
                                         {/* Hover glow line */}
                                         <div className={`absolute top-0 bottom-0 left-0 w-1 ${isHeavy ? 'bg-red-500' : 'bg-yellow-400'} opacity-0 group-hover:opacity-100 transition-opacity`} />
 
-                                        <div className="flex-1">
-                                            <p className="text-white/40 text-[10px] uppercase font-mono tracking-widest mb-1">
+                                        <div className="flex-1 min-w-0 border-r border-transparent">
+                                            <p className="text-white/40 text-[9px] sm:text-[10px] uppercase font-mono tracking-widest mb-1 truncate">
                                                 Deduction // {f.max < 100 ? `MAX ${f.max}` : 'GLOBAL'}
                                             </p>
-                                            <h4 className="text-lg font-bold text-white/90 group-hover:text-white transition-colors">{f.factor}</h4>
+                                            <h4 className="text-sm sm:text-lg font-bold text-white/90 group-hover:text-white transition-colors truncate pr-2">{f.factor}</h4>
                                         </div>
 
-                                        <div className={`shrink-0 flex items-center justify-center w-16 h-16 rounded-xl border border-white/10 ${isHeavy ? 'bg-red-500/10 shadow-[0_0_20px_rgba(239,68,68,0.2)]' : 'bg-yellow-400/10 shadow-[0_0_20px_rgba(250,204,21,0.2)]'}`}>
-                                            <span className={`font-mono text-xl font-bold ${colorClass}`}>
+                                        <div className={`shrink-0 flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-xl border border-white/10 ${isHeavy ? 'bg-red-500/10 shadow-[0_0_20px_rgba(239,68,68,0.2)]' : 'bg-yellow-400/10 shadow-[0_0_20px_rgba(250,204,21,0.2)]'}`}>
+                                            <span className={`font-mono text-lg sm:text-xl font-bold ${colorClass}`}>
                                                 {f.impact}
                                             </span>
                                         </div>

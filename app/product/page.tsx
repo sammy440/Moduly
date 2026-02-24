@@ -19,7 +19,7 @@ export default function ProductPage() {
 
             {/* Header */}
             <header className="sticky top-0 z-50 border-b border-white/5" style={{ background: 'rgba(11,15,25,0.8)', backdropFilter: 'blur(16px)' }}>
-                <div className="max-w-7xl mx-auto px-9 h-20 flex items-center justify-between">
+                <div className="max-w-7xl mx-auto px-4 md:px-9 h-16 md:h-20 flex items-center justify-between">
                     <div className="flex items-center gap-6">
                         <Link href="/" className="flex items-center gap-3 text-white group">
                             <div className="relative flex items-center justify-center w-8 h-8">
@@ -51,7 +51,7 @@ export default function ProductPage() {
                         </Link>
                         <Link
                             href="/dashboard"
-                            className="px-4 py-2 rounded-lg bg-primary text-background text-sm font-bold hover:bg-primary/90 transition-all flex items-center gap-2"
+                            className="px-3 py-1.5 md:px-4 md:py-2 rounded-lg bg-primary text-background text-xs md:text-sm font-bold hover:bg-primary/90 transition-all flex items-center gap-1 md:gap-2"
                         >
                             Dashboard <ArrowUpRight size={14} />
                         </Link>
@@ -76,7 +76,7 @@ export default function ProductPage() {
                         Explore every feature, learn the CLI commands, and understand the full analysis pipeline — all in one place.
                     </p>
 
-                    <div className="flex items-center justify-center gap-4 mt-10">
+                    <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mt-8 md:mt-10">
                         {[
                             { label: "Features", href: "#features" },
                             { label: "CLI Tool", href: "#cli" },
@@ -85,7 +85,7 @@ export default function ProductPage() {
                             <a
                                 key={btn.href}
                                 href={btn.href}
-                                className="px-5 py-2.5 rounded-full border border-white/10 text-sm font-medium text-white/60 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all"
+                                className="px-4 py-2 md:px-5 md:py-2.5 rounded-full border border-white/10 text-xs md:text-sm font-medium text-white/60 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all w-full sm:w-auto text-center"
                             >
                                 {btn.label}
                             </a>
@@ -109,11 +109,11 @@ export default function ProductPage() {
                     <p className="text-white/50 text-lg mb-10">
                         Install the CLI, run your first analysis, and see your architecture come alive.
                     </p>
-                    <div className="flex items-center justify-center gap-4">
-                        <Link href="/dashboard" className="px-8 py-3 rounded-full bg-primary text-background font-bold text-lg hover:bg-primary/90 transition-all flex items-center gap-2">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-sm mx-auto sm:max-w-none">
+                        <Link href="/dashboard" className="w-full sm:w-auto px-6 py-3 md:px-8 rounded-full bg-primary text-background font-bold text-base md:text-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2">
                             Open Dashboard <ChevronRight size={18} />
                         </Link>
-                        <Link href="https://github.com/sammy440/Moduly" target="_blank" className="px-8 py-3 rounded-full border border-white/10 text-white/70 font-bold text-lg hover:border-white/30 hover:bg-white/5 transition-all flex items-center gap-2">
+                        <Link href="https://github.com/sammy440/Moduly" target="_blank" className="w-full sm:w-auto px-6 py-3 md:px-8 rounded-full border border-white/10 text-white/70 font-bold text-base md:text-lg hover:border-white/30 hover:bg-white/5 transition-all flex items-center justify-center gap-2">
                             <Github size={18} /> GitHub
                         </Link>
                     </div>
