@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Moduly | Project Architecture Visualizer",
     description: "High-end interactive architecture & dependency visualization for modern developers.",
-    url: "https://moduly.vercel.app",
+    url: "https://moduly-zeta.vercel.app",
     siteName: "Moduly",
     images: [
       {

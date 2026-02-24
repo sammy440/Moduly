@@ -50,7 +50,7 @@ This repository exclusively holds the **Moduly Frontend**, a modern Next.js 14 a
    ```
 
 4. **Experience the app:**
-   Navigate in your browser to [https://moduly.vercel.app](https://moduly.vercel.app) to view the Moduly landing page and dashboard.
+   Navigate in your browser to [https://moduly-zeta.vercel.app](https://moduly-zeta.vercel.app) to view the Moduly landing page and dashboard.
 
 ---
 
