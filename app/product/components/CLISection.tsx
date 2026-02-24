@@ -66,7 +66,7 @@ export function CLISection() {
                         transition={{ type: "spring", stiffness: 400, damping: 25 }}
                         className="inline-flex items-center gap-4 p-5 pr-7 rounded-2xl border border-white/10 hover:border-primary/40 transition-colors cursor-pointer group relative overflow-hidden"
                         style={{ background: 'rgba(15,23,42,0.6)', backdropFilter: 'blur(20px)' }}
-                        onClick={() => handleCopy("npm i -g moduly")}
+                        onClick={() => handleCopy("npm i -g moduly-cli")}
                     >
                         <motion.div
                             className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -74,9 +74,9 @@ export function CLISection() {
                         <div className="p-3 bg-primary/10 rounded-xl text-primary relative z-10 group-hover:scale-110 transition-transform">
                             <Terminal size={24} />
                         </div>
-                        <code className="font-mono text-xl text-white/90 relative z-10">npm i -g moduly</code>
+                        <code className="font-mono text-xl text-white/90 relative z-10">npm i -g moduly-cli</code>
                         <div className="p-2 bg-white/5 rounded-lg text-white/40 group-hover:text-primary transition-colors ml-3 relative z-10">
-                            {copied === "npm i -g moduly" ? <CheckCircle size={18} className="text-green-400" /> : <Copy size={18} />}
+                            {copied === "npm i -g moduly-cli" ? <CheckCircle size={18} className="text-green-400" /> : <Copy size={18} />}
                         </div>
                     </motion.div>
                 </motion.div>

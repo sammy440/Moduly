@@ -5,7 +5,7 @@ import { Copy, Terminal } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
 const TERMINAL_STEPS = [
-    { type: "input", text: "npm i -g moduly" },
+    { type: "input", text: "npm i -g moduly-cli" },
     { type: "output", text: "added 1 package, and audited 2 packages in 3s", delay: 800, color: "text-green-400" },
     { type: "input", text: "moduly analyze --report" },
     { type: "output", text: "⠋ Analyzing project architecture...", delay: 600, color: "text-primary/70" },
@@ -117,7 +117,7 @@ export function InstallationSection() {
     const [copied, setCopied] = useState(false);
 
     const handleCopy = () => {
-        navigator.clipboard.writeText("npm i moduly");
+        navigator.clipboard.writeText("npm i -g moduly-cli");
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     };
@@ -168,7 +168,7 @@ export function InstallationSection() {
                             <div className="p-3 bg-primary/10 rounded-lg text-primary">
                                 <Terminal size={20} />
                             </div>
-                            <span className="font-mono text-lg text-white/90">npm i -g moduly</span>
+                            <span className="font-mono text-lg text-white/90">npm i -g moduly-cli</span>
                         </div>
                         <div className="p-3 bg-white/5 rounded-lg text-white/40 group-hover:text-primary transition-colors">
                             {copied ? <span className="text-xs font-bold px-2">COPIED!</span> : <Copy size={20} />}

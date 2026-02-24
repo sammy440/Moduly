@@ -7,10 +7,10 @@ import { SectionHeader, fadeUp, stagger } from "./SectionHeader";
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const quickStartSteps = [
-    { step: "1", title: "Install globally", code: "npm i -g moduly", desc: "One command, zero config — installs everywhere." },
+    { step: "1", title: "Install globally", code: "npm i -g moduly-cli", desc: "One command, zero config — installs everywhere." },
     { step: "2", title: "Navigate to project", code: "cd my-project", desc: "Point to any JavaScript or TypeScript codebase." },
     { step: "3", title: "Run analysis", code: "moduly analyze --report", desc: "Scans files, deps, security, and performance." },
-    { step: "4", title: "Open dashboard", code: "localhost:3000/dashboard", desc: "Report syncs live to the visual dashboard." },
+    { step: "4", title: "Open dashboard", code: "moduly.vercel.app/dashboard", desc: "Report syncs live to the visual dashboard." },
 ];
 
 const configOptions = [
@@ -18,7 +18,7 @@ const configOptions = [
     { option: "Languages", desc: ".ts, .tsx, .js, .jsx, .mjs, .cjs, .json, .css, .scss, .html", scope: "Auto" },
     { option: "Git Integration", desc: "Reads git log for hotspot analysis. Requires git.", scope: "Auto" },
     { option: "AI Mode", desc: "Enable/disable AI commit detection via moduly ai on|off", scope: "Persistent" },
-    { option: "Dashboard Sync", desc: "Auto-pushes report to localhost:3000 with --report flag", scope: "API" },
+    { option: "Dashboard Sync", desc: "Auto-pushes report to moduly.vercel.app with --report flag", scope: "API" },
 ];
 
 const securityPatterns = [

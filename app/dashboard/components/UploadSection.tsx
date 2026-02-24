@@ -31,7 +31,7 @@ export function UploadSection() {
 
                 <h2 className="text-3xl font-bold tracking-tight mb-4 text-white">Listening for Moduly CLI</h2>
                 <p className="text-[#a0a0a0] mb-8 leading-relaxed max-w-md">
-                    We've automated the workflow. The dashboard is live and listening on <span className="text-white font-mono">localhost:3000</span>.
+                    We've automated the workflow. The dashboard is live and listening on <span className="text-white font-mono">moduly.vercel.app</span>.
                 </p>
 
                 <div className="bg-black/50 border border-white/10 p-6 rounded-2xl w-full text-left flex flex-col gap-3">
