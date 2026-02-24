@@ -61,10 +61,10 @@ export function DependenciesPanel() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="flex-1 mx-10 mb-10 flex flex-col gap-5"
+            className="flex-1 mx-4 md:mx-10 mb-6 md:mb-10 flex flex-col gap-5"
         >
             {/* ── Summary cards ────────────────────────────────────────────── */}
-            <div className="grid grid-cols-4 gap-5">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
                 {[
                     { label: 'Total Packages', value: totalDeps, icon: PackageCheck, color: '#5B9CFF', gradient: 'linear-gradient(to right, #5B9CFF00, #5B9CFF, #5B9CFF00)' },
                     { label: 'Actively Used', value: usedCount, icon: Check, color: '#4ECDC4', gradient: 'linear-gradient(to right, #4ECDC400, #4ECDC4, #4ECDC400)' },
@@ -96,11 +96,11 @@ export function DependenciesPanel() {
             </div>
 
             {/* ── Middle row — Chart + Used/Unused lists ───────────────────── */}
-            <div className="grid grid-cols-5 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-5">
                 {/* Usage donut */}
                 <motion.div
                     variants={scaleIn}
-                    className="col-span-2 rounded-2xl border border-white/[0.06] p-6 flex flex-col"
+                    className="md:col-span-2 rounded-2xl border border-white/[0.06] p-6 flex flex-col"
                     style={{ background: 'var(--dash-surface)', backdropFilter: 'blur(16px)' }}
                 >
                     <div className="flex items-center gap-3 mb-4">
@@ -153,7 +153,7 @@ export function DependenciesPanel() {
                 {/* Used + Unused lists */}
                 <motion.div
                     variants={scaleIn}
-                    className="col-span-3 rounded-2xl border border-white/[0.06] p-6 flex flex-col"
+                    className="md:col-span-3 rounded-2xl border border-white/[0.06] p-6 flex flex-col"
                     style={{ background: 'var(--dash-surface)', backdropFilter: 'blur(16px)' }}
                 >
                     <div className="flex items-center gap-3 mb-5">
@@ -209,7 +209,7 @@ export function DependenciesPanel() {
             </div>
 
             {/* ── Bottom row — Outdated + Suggestions ─────────────────────── */}
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                 {/* Outdated deps */}
                 <motion.div
                     variants={itemVariants}

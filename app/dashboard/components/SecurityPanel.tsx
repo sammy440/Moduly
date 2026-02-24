@@ -77,10 +77,10 @@ export function SecurityPanel() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="flex-1 mx-10 mb-10 flex flex-col gap-5"
+            className="flex-1 mx-4 md:mx-10 mb-6 md:mb-10 flex flex-col gap-5"
         >
             {/* ── Summary cards ────────────────────────────────────────────── */}
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
                 {[
                     { label: 'Total Issues', value: security.length, icon: ShieldAlert, color: security.length > 0 ? '#FF6B6B' : '#4ECDC4', gradient: security.length > 0 ? 'linear-gradient(to right, #FF6B6B00, #FF6B6B, #FF6B6B00)' : 'linear-gradient(to right, #4ECDC400, #4ECDC4, #4ECDC400)' },
                     { label: 'Dependency CVEs', value: npmAuditCount, icon: Package, color: '#9F7AEA', gradient: 'linear-gradient(to right, #9F7AEA00, #9F7AEA, #9F7AEA00)' },
@@ -129,11 +129,11 @@ export function SecurityPanel() {
                     <p className="text-sm text-white/40 max-w-sm text-center">No active vulnerabilities found. Your codebase is currently free of known security issues.</p>
                 </motion.div>
             ) : (
-                <div className="grid grid-cols-5 gap-5 flex-1">
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-5 flex-1">
                     {/* Donut chart */}
                     <motion.div
                         variants={scaleIn}
-                        className="col-span-2 rounded-2xl border border-white/[0.06] p-6 flex flex-col"
+                        className="lg:col-span-2 rounded-2xl border border-white/[0.06] p-6 flex flex-col"
                         style={{ background: 'var(--dash-surface)', backdropFilter: 'blur(16px)' }}
                     >
                         <div className="flex items-center gap-3 mb-4">
@@ -186,7 +186,7 @@ export function SecurityPanel() {
                     {/* Vulnerability list */}
                     <motion.div
                         variants={scaleIn}
-                        className="col-span-3 rounded-2xl border border-white/[0.06] p-6 flex flex-col"
+                        className="lg:col-span-3 rounded-2xl border border-white/[0.06] p-6 flex flex-col"
                         style={{ background: 'var(--dash-surface)', backdropFilter: 'blur(16px)' }}
                     >
                         <div className="flex items-center gap-3 mb-5">

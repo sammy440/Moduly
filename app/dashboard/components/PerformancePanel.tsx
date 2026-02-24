@@ -102,10 +102,10 @@ export function PerformancePanel() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="flex-1 mx-10 mb-10 flex flex-col gap-5"
+            className="flex-1 mx-4 md:mx-10 mb-6 md:mb-10 flex flex-col gap-5"
         >
             {/* ── Metric cards ────────────────────────────────────────────── */}
-            <div className="grid grid-cols-4 gap-5">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
                 <MetricCard label="Bundle Size" value={performance.bundleSize} icon={Box} color="#CCFF00" gradient="linear-gradient(to right, #CCFF0000, #CCFF00, #CCFF0000)" />
                 <MetricCard label="Source Size" value={performance.sourceSize} icon={Activity} color="#5B9CFF" gradient="linear-gradient(to right, #5B9CFF00, #5B9CFF, #5B9CFF00)" />
                 <MetricCard label="Est. Load Time" value={performance.loadTime} icon={Zap} color="#FFB84C" gradient="linear-gradient(to right, #FFB84C00, #FFB84C, #FFB84C00)" />
@@ -113,11 +113,11 @@ export function PerformancePanel() {
             </div>
 
             {/* ── Charts row ──────────────────────────────────────────────── */}
-            <div className="grid grid-cols-5 gap-5">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-5">
                 {/* File Size Distribution */}
                 <motion.div
                     variants={scaleIn}
-                    className="col-span-3 rounded-2xl border border-white/[0.06] p-6"
+                    className="lg:col-span-3 rounded-2xl border border-white/[0.06] p-6 flex flex-col"
                     style={{ background: 'var(--dash-surface)', backdropFilter: 'blur(16px)' }}
                 >
                     <div className="flex items-center justify-between mb-5">
@@ -162,7 +162,7 @@ export function PerformancePanel() {
                 {/* Load Time Curve */}
                 <motion.div
                     variants={scaleIn}
-                    className="col-span-2 rounded-2xl border border-white/[0.06] p-6"
+                    className="lg:col-span-2 rounded-2xl border border-white/[0.06] p-6 flex flex-col"
                     style={{ background: 'var(--dash-surface)', backdropFilter: 'blur(16px)' }}
                 >
                     <div className="flex items-center gap-3 mb-5">
@@ -198,7 +198,7 @@ export function PerformancePanel() {
             </div>
 
             {/* ── Bottom cards row ────────────────────────────────────────── */}
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5">
                 {/* Large Files */}
                 <motion.div
                     variants={itemVariants}
