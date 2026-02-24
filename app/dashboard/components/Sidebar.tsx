@@ -58,7 +58,7 @@ export function Sidebar() {
         >
             <div className="flex items-center justify-between mb-10 px-2">
                 {!isCollapsed && (
-                    <div className="flex ml-4 items-center gap-3">
+                    <Link href="/" className="flex ml-4 items-center gap-3 hover:opacity-80 transition-opacity cursor-pointer">
                         <Hexagon className="absolute text-primary animate-[spin_10s_linear_infinite]" size={24} />
                         <motion.span
                             initial={{ opacity: 0 }}
@@ -67,7 +67,7 @@ export function Sidebar() {
                         >
                             Moduly
                         </motion.span>
-                    </div>
+                    </Link>
                 )}
                 <button
                     onClick={() => setIsCollapsed(!isCollapsed)}
